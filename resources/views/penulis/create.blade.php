@@ -47,7 +47,7 @@
 
             {{-- SIDEBAR --}}
             @include('layouts.sidebar')
-            
+
             {{-- /SIDEBAR --}}
         </nav>
 
@@ -55,9 +55,46 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Welcome to the Admin Dashboard</h1>
-                        
+                        <h1 class="page-header">Writer's Data</h1>
+
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Add Writer's Data
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form action="{{ route('penulis.store') }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label>Writer's Name?</label>
+                                                <input type="text" class="form-control" name="nama_penulis"
+                                                    placeholder="Writer's Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jenis Kelamin</label>
+                                                <br>
+                                                <input type="radio" name="jenis_kelamin" value="Laki-laki">Laki-laki
+                                                <input type="radio" name="jenis_kelamin" value="Perempuan">Perempuan
+                                            </div>
+                                            <a href="{{route('penulis.index')}}" class="btn btn-danger">Back</a>
+                                            <button type="submit" class="btn btn-primary">Add</button>
+                                        </form>
+                                    </div>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <!-- /.row (nested) -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
             </div>
         </div>
